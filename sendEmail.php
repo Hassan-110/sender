@@ -1,19 +1,22 @@
 <?php
 $start_time = microtime(true) ;
-
+?>
 
 <html>
-  <body>
-
-    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+    <b>first commit</b>
+   <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
         Email: <input name="email" type="text" placeholder="Email" /><br /><br />
         Subject: <input name="subject" type="text" placeholder="Subject" /><br /><br />
         Message:<br />
         <textarea rows="15" cols="40"; name="message" id="message"></textarea><br /><br />
-        <input type="submit" name="submit" value="Send An Email" class="btn btn-primary">
+        <input type="subsmit" name="submit" value="Send An Email" class="btn btn-primary">
     </form>
-   
-  </body>
+</body>
 </html>
 
 <?php
