@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Sender</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div >
+        <label for="note" class="col-form-label">email</label>
+        </div>
+        <input id="email" placeholder="Email" class="form-control">
+        <div>
+        <label for="note" class="col-form-label">message</label>
+        </div>
+
+        <textarea style="width: 690px;height: 400px;margin: 0px;margin-top: 32px; "name="message" id="message">
+        </textarea>
+
+
+        <input type="button" onclick="sendEmail()" value="Send An Email" class="btn btn-primary">
+        
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+      function sendEmail(){
+            var email = $("#email");
+            var message = $("#message");
+        $.ajax({
+            url:sendEmail.php,
+            method: 'POST',
+            dataType: 'json',
+            data:{
+                email: email.val(),
+                message: message.val(),
+            }, success: function (response){
+                console.log(response);
+            }
+        });
+      }
+  </script>
+
+</body>
+
+</html>
